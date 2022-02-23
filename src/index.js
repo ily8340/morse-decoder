@@ -40,16 +40,16 @@ const MORSE_TABLE = {
 function decode(expr) {
     let morseS = '',
         morseR ='';
-    for (let a = 0; a < expr.length; a += 10){
-        morseS = expr.slice(a, a + 10);
+    for (let i = 0; i < expr.length; i += 10){
+        morseS = expr.slice(i, i + 10);
         if (morseS == "*".repeat(10)) {
             morseR += ' ';
             continue;
         }
         let result = '',
             morseWord = '';
-        for(let h = 0; h<morseS.length; h += 2){
-            morseWord = morseS.slice(h, h + 2);
+        for(let k = 0; k<morseS.length; k += 2){
+            morseWord = morseS.slice(k, k + 2);
             if(morseWord == '10') {
                 result += '.';
             }
